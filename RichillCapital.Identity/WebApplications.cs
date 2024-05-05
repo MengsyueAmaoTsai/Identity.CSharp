@@ -3,7 +3,7 @@ using Duende.IdentityServer.Models;
 
 namespace RichillCapital.Identity;
 
-internal static class WebApplications
+internal static class IdentityClients
 {
     internal static readonly Client TraderStudio = new()
     {

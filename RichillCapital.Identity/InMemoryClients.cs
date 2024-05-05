@@ -6,6 +6,6 @@ internal static class InMemoryClients
 {
     internal static IEnumerable<Client> CreateClients()
     {
-        yield return WebApplications.TraderStudio;
+        yield return IdentityClients.TraderStudio;
     }
 }
