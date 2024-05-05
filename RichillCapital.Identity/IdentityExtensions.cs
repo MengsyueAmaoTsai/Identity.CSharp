@@ -1,3 +1,4 @@
+using Duende.IdentityServer;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,22 @@ public static class IdentityExtensions
             .AddInMemoryIdentityResources(InMemoryIdentityResources.CreateIdentityResources())
             .AddInMemoryApiScopes(InMemoryApiScopes.CreateApiScopes())
             .AddInMemoryApiResources(InMemoryApiResources.CreateApiResources());
+
+        var authenticationBuilder = services.AddAuthentication();
+
+        authenticationBuilder
+            .AddMicrosoftAccount(options =>
+            {
+                options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+                options.ClientId = "ef2018e1-03c1-44c3-9825-0ef20a56cb96";
+                options.ClientSecret = "6zg8Q~lUijS6jWCvWNNYFkGOL5uC~rMzSLtRabT3";
+            })
+            .AddGoogle(options =>
+            {
+                options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+                options.ClientId = "115664116245-siag9hsoj44aag0mad1bcuqk993g5iru.apps.googleusercontent.com";
+                options.ClientSecret = "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";
+            });
 
         return services;
     }
