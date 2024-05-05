@@ -58,7 +58,7 @@ public static class IdentityExtensions
             .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
             {
                 options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.Authority = "http://localhost:9999";
+                options.Authority = "https://localhost:10999";
                 options.ClientId = "RichillCapital.TraderStudio.Web";
                 options.ClientSecret = "secret";
                 options.ResponseType = "code";

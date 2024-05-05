@@ -18,10 +18,12 @@ internal static class IdentityClients
         RedirectUris =
         {
             "http://localhost:9998/signin-oidc",
+            "https://localhost:10998/signin-oidc",
         },
         PostLogoutRedirectUris =
         {
             "http://localhost:9998/signout-callback-oidc",
+            "https://localhost:10998/signout-callback-oidc",
         },
         AllowedScopes =
         {
